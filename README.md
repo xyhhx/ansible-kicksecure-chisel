@@ -9,7 +9,7 @@ Mirrors:
 
 </div>
 
-Use these playbooks to configure a Debian server to be distro-morphed to [Kicksecure](https://kicksecure.org), hardened a bit more, and configured to run Docker.
+Use these playbooks to configure a Debian server to be distro-morphed to [Kicksecure](https://kicksecure.org), hardened a bit more, and configured to run Chisel (mainly for use as a public endpoint for [chisel-operator](https://github.com/FyraLabs/chisel-operator/)) 
 
 This playbook was tested using OVH servers with an SSH key preinstalled (on the `debian` user instead of `root`)
 
