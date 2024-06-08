@@ -1,13 +1,13 @@
 ---
-- name: Privileged user is set up 
+- name: Privileged user is set up
   become: true
   remote_user: debian
-  hosts: kicksecure_docker_hosts
+  hosts: chisel_host
   roles:
     - ../roles/privileged-user
 - name: Default admins are disabled/removed
   become: true
   remote_user: "{{ lookup('env', 'ADMIN_USERNAME') }}"
-  hosts: kicksecure_docker_hosts
+  hosts: chisel_host
   roles:
     - ../roles/remove-default-admin-users

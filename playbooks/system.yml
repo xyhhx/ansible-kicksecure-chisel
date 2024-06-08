@@ -1,5 +1,6 @@
 ---
 - become: true
+  hosts: chisel_host
   remote_user: "{{ lookup('env', 'ADMIN_USERNAME') }}"
   roles:
     - ../roles/common
