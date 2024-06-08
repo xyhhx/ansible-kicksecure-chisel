@@ -1,0 +1,16 @@
+---
+- name: Use hardened ssh_config
+  ansible.builtin.copy:
+    src: files/ssh_config
+    dest: /etc/ssh/ssh_config
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Use hardened sshd_config
+  ansible.builtin.copy:
+    src: files/sshd_config
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: '0644'
