@@ -1,0 +1,6 @@
+---
+- become: true
+  remote_user: "{{ lookup('env', 'ADMIN_USERNAME') }}"
+  roles:
+    - ../roles/common
+    - ../roles/kicksecure-distromorph
