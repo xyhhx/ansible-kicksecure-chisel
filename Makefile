@@ -1,16 +1,15 @@
+inventories:=-i inventories/hosts
 up: .env
-	ansible-playbook site.yml -i inventories/hosts
+	ansible-playbook site.yml ${inventories}
 
 install-requirements:
 	ansible-galaxy install -r roles/requirements.yml
 
-a: playbook
-
 playbook:
-	ansible-playbook $(filter-out $@,$(MAKECMDGOALS))
+	ansible-playbook ${inventories} $(filter-out $@,$(MAKECMDGOALS))
 
 role:
-	ansible $(filter-out $@,$(MAKECMDGOALS))
+	ansible ${inventories} $(filter-out $@,$(MAKECMDGOALS))
 
 %:	  
 	@:	
