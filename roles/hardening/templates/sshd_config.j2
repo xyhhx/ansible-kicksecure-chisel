@@ -9,7 +9,7 @@ Ciphers aes256-gcm@openssh.com
 MACs -*
 LoginGraceTime 15s
 MaxAuthTries 1
-AllowUsers {{ssh_users}}
+AllowUsers {{ ssh_users }} 
 AuthorizedKeysFile .ssh/authorized_keys
 PasswordAuthentication no
 KbdInteractiveAuthentication no
@@ -20,4 +20,4 @@ TCPKeepAlive no
 ClientAliveInterval 60
 ClientAliveCountMax 10
 # MaxStartups 4096
-Subsystem sftp /usr/lib/ssh/sftp-server
+Subsystem sftp /usr/lib/openssh/sftp-server
