@@ -2,6 +2,7 @@
 - name: Ensure console group exists
   ansible.builtin.group:
     name: console
+    system: true
     state: present
 
 - name: Ensure privileged user is in console group

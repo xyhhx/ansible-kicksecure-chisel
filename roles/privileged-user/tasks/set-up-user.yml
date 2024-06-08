@@ -8,12 +8,14 @@
   ansible.builtin.user:
     state: present
     name: "{{ privileged_user }}"
-    groups: admins 
+    groups: 
+      - admins 
+      - sudo
     append: true
     generate_ssh_key: true
     ssh_key_type: "ed25519"
     ssh_key_file: .ssh/id_rsa
-    password: "*"
+    password: "{{ privileged_user_password | password_hash('sha512', 65534 | random(seed=inventory_hostname) | string, rounds=5001) }}" 
   register: ssh_fingerprint
 
 - name: The admin's public key is
